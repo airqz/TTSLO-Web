@@ -1,7 +1,7 @@
 {
-	"name": "Progressive Web App",
-	"short_name": "Demo PWA",
-	"description": "Demo for progressive web app with push notifications, background sync etc.",
+	"name": "Progressive TxtToSL Web App",
+	"short_name": "start PWA",
+	"description": "Translates text into sign language.",
 	"start_url": "./index.html?utm=homescreen",
 	"display": "standalone",
 	"orientation": "portrait",
@@ -9,27 +9,35 @@
 	"theme_color": "#29434d",
 	"icons": [
 		{
-			"src": "./images/icons/android-chrome-192x192.png",
+			"src": "ico/icon_48.png",
+        	"type": "image/png",
+       		"sizes": "48x48"
+		},
+		{
+			"src": "ico/icon_72.png",
+			"type": "image/png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "ico/icon_96.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "ico/icon_144.png",
+			"type": "image/png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "ico/icon_192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "./images/icons/android-chrome-512x512.png",
+			"src": "ico/icon_512.png",
 			"type": "image/png",
 			"sizes": "512x512"
-		},
-		{
-            "src": "./images/icons/android-maskable-192x192.png",
-            "type": "image/png",
-			"sizes": "192x192",
-			"purpose": "maskable"
-        },
-        {
-            "src": "./images/icons/android-maskable-512x512.png",
-            "type": "image/png",
-            "sizes": "512x512",
-			"purpose": "maskable"
-        }
+		}
 	],
 	"gcm_sender_id": "847244732742",
 	"gcm_user_visible_only": true
