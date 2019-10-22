@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700">
   <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="code.js"></script>
 </head>
 
 <body onload="load();">
@@ -41,7 +44,6 @@
         <input hidden id="individual-speed-actual" name="individualSpeed" value="100"></input>
         <input hidden id="progressKey" name="progressKey" value="">
         <input hidden id="redirect" name="redirect" value="false">
-
 
         <div class="mdc-text-field mdc-text-field--invalid" data-mdc-auto-init="MDCTextField" style="width: 100%;">
           <input autofocus required pattern=".{0,100}" autocomplete="off" name="text" type="text" id="translateText" class="mdc-text-field__input">
@@ -246,172 +248,169 @@
   </h3>
 
   <div id="about-dialog" class="mdc-dialog mdc-dialog--scrollable"
-     role="alertdialog"
-     aria-modal="true"
-     aria-labelledby="about-dialog-title"
-     aria-describedby="about-dialog-content">
+  role="alertdialog"
+  aria-modal="true"
+  aria-labelledby="about-dialog-title"
+  aria-describedby="about-dialog-content">
   <div class="mdc-dialog__container">
     <div class="mdc-dialog__surface">
-      <h2 class="mdc-dialog__title modal-header" id="about-dialog-title"><!--
-     -->About<!--
-   --></h2>
-      <div class="mdc-dialog__content modal-content" id="about-dialog-content">
-        <h4>Disclaimer</h4>
-        <hr />
+<h2 class="mdc-dialog__title modal-header" id="about-dialog-title"><!--
+-->About<!--
+--></h2>
+<div class="mdc-dialog__content modal-content" id="about-dialog-content">
+  <h4>Disclaimer</h4>
+  <hr />
 
-        <p>
-          TxtToSL Online is:
-        </p>
+  <p>
+    TxtToSL Online is:
+  </p>
 
-        <ul>
-          <li>Not 100% accurate</li>
-          <li>Unstable and buggy</li>
-        </ul>
+  <ul>
+    <li>Not 100% accurate</li>
+    <li>Unstable and buggy</li>
+  </ul>
 
-        <p>
-          We are not responsible if our translations that are produced are inaccurate, not working or glitchy. This is a project we do in our free time, with no financial benefit.
-        </p>
+  <p>
+    We are not responsible if our translations that are produced are inaccurate, not working or glitchy. This is a project we do in our free time, with no financial benefit.
+  </p>
 
-        <br />
+  <br />
 
-        <h4>Related Links</h4>
-        <hr />
-        <ul>
-          <li><a href="https://github.com/oojmed/TTSLO-Web">Github Repository for the TxtToSL Online Web App (this)</a></li>
-          <li><a href="https://txttosl.oojmed.com/docs/">API Documentation</a></li>
-        </ul>
+  <h4>Related Links</h4>
+  <hr />
+  <ul>
+    <li><a href="https://github.com/oojmed/TTSLO-Web">Github Repository for the TxtToSL Online Web App (this)</a></li>
+    <li><a href="https://txttosl.oojmed.com/docs/">API Documentation</a></li>
+  </ul>
 
-        <br />
+  <br />
 
-        <h4>Thanks</h4>
-        <hr />
+  <h4>Thanks</h4>
+  <hr />
 
-        <h6>Dictionaries</h6>
-        <ul style="margin-bottom: 0.25em;">
-          <li>BSL - <a href="https://signbsl.com">SignBSL</a></li>
-          <li>ASL - <a href="https://signasl.org">SignASL</a></li>
-          <li>Auslan - <a href="http://auslan.org.au/">Auslan Signbank</a>*</li>
-          <li>DGS - <a href="https://signdict.org/?locale=en">SignDict</a> (<a href="https://github.com/signdict/website/wiki/API">API</a>)</li>
-          <li>LSF - <a href="http://www.sematos.eu/lsf-en.html">Sematos (LSF)</a>*</li>
-          <li>LSE - <a href="http://www.sematos.eu/lse-en.html">Sematos (LSE)</a>*</li>
-        </ul> * These sites do not use HTTPS, so any connections are insecure.
+  <h6>Dictionaries</h6>
+  <ul style="margin-bottom: 0.25em;">
+    <li>BSL - <a href="https://signbsl.com">SignBSL</a></li>
+    <li>ASL - <a href="https://signasl.org">SignASL</a></li>
+    <li>Auslan - <a href="http://auslan.org.au/">Auslan Signbank</a>*</li>
+    <li>DGS - <a href="https://signdict.org/?locale=en">SignDict</a> (<a href="https://github.com/signdict/website/wiki/API">API</a>)</li>
+    <li>LSF - <a href="http://www.sematos.eu/lsf-en.html">Sematos (LSF)</a>*</li>
+    <li>LSE - <a href="http://www.sematos.eu/lse-en.html">Sematos (LSE)</a>*</li>
+  </ul> * These sites do not use HTTPS, so any connections are insecure.
 
-        <br /> <br />
+  <br /> <br />
 
-        <h6>Contributors to TxtToSL Online (Web)</h6>
-		    <ul>
-          <li><a href="https://github.com/roshanrahman">roshanrahman</a></li>
-		      <li><a href="https://github.com/talitaoliveira">talitaoliveira</a></li>
-		      <li><a href="https://github.com/realSaddy">realSaddy</a></li>
-		    </ul>
+  <h6>Contributors to TxtToSL Online (Web)</h6>
+  <ul>
+    <li><a href="https://github.com/roshanrahman">roshanrahman</a></li>
+    <li><a href="https://github.com/talitaoliveira">talitaoliveira</a></li>
+    <li><a href="https://github.com/realSaddy">realSaddy</a></li>
+  </ul>
 
-        <br />
+  <br />
 
-        <h4>Server Status</h4>
-        <hr />
+  <h4>Server Status</h4>
+  <hr />
 
-        <p id="status">
-          If you can see this the server is probably offline (or you might have JavaScript disabled).
-        </p>
+  <p id="status">
+    If you can see this the server is probably offline (or you might have JavaScript disabled).
+  </p>
 
-        <br />
+  <br />
 
-        <h4>Tips for using / learning sign languages</h4>
-        <hr />
+  <h4>Tips for using / learning sign languages</h4>
+  <hr />
 
-        <h6>Use facial expressions</h6>
-        <p>
-          It may not seem necessary or important, but facial expressions can help the context and mood you are conveying.
-        </p>
+  <h6>Use facial expressions</h6>
+  <p>
+    It may not seem necessary or important, but facial expressions can help the context and mood you are conveying.
+  </p>
 
-        <h6>Mouth or say the word as you sign</h6>
-        <p>
-          Again, even though you are signing, mouthing or speaking can really help.
-        </p>
+  <h6>Mouth or say the word as you sign</h6>
+  <p>
+    Again, even though you are signing, mouthing or speaking can really help.
+  </p>
 
-        <h6>Context matters</h6>
-        <p>
-          Context is relied on a lot in most sign languages, so remembering it is needed.
-        </p>
+  <h6>Context matters</h6>
+  <p>
+    Context is relied on a lot in most sign languages, so remembering it is needed.
+  </p>
 
-        <h6>As with everything, practice makes perfect</h6>
-        <p>
-          When first learning you may easily forget signs at first, but whenever you want to learn a new one, over time, just do the sign over and over. Eventually (and hopefully ASAP) you will memorise the sign, and then won't have to practice it
-          again. Then you can move onto new signs!
-        </p>
+  <h6>As with everything, practice makes perfect</h6>
+  <p>
+    When first learning you may easily forget signs at first, but whenever you want to learn a new one, over time, just do the sign over and over. Eventually (and hopefully ASAP) you will memorise the sign, and then won't have to practice it
+    again. Then you can move onto new signs!
+  </p>
 
-        <br />
+  <br />
 
-        <h4>FAQ</h4>
-        <hr />
+  <h4>FAQ</h4>
+  <hr />
 
-        <h6>I see 'Offline' and there's no button to translate</h6>
-        <p>
-          That means our server are currently offline, and is unable to process requests. Our server will be down most of the time, as we are still actively developing TxtToSL Online.
-        </p>
+  <h6>I see 'Offline' and there's no button to translate</h6>
+  <p>
+    That means our server are currently offline, and is unable to process requests. Our server will be down most of the time, as we are still actively developing TxtToSL Online.
+  </p>
 
-        <h6>How did you make this?</h6>
-        <p>
-          Continue scrolling below to see a detailed semi-technical explaination on how we have made TxtToSL Online.
-        </p>
+  <h6>How did you make this?</h6>
+  <p>
+    Continue scrolling below to see a detailed semi-technical explaination on how we have made TxtToSL Online.
+  </p>
 
-        <h6>Why do the labels for the speed sliders go red if it's low?</h6>
-        <p>
-          Most of the time, the slower the speed you set, the longer it takes. So we make the labels redden, the more red, the longer.
-        </p>
+  <h6>Why do the labels for the speed sliders go red if it's low?</h6>
+  <p>
+    Most of the time, the slower the speed you set, the longer it takes. So we make the labels redden, the more red, the longer.
+  </p>
 
-        <h6>What does the 'Overlay' switch do?</h6>
-        <p>
-          The overlay switch tells our server whether to add the overlay / subtitles / captions to the result. We name it an overlay instead of subtitles or anything simlar, as it adds more than just subtitles.
-        </p>
+  <h6>What does the 'Overlay' switch do?</h6>
+  <p>
+    The overlay switch tells our server whether to add the overlay / subtitles / captions to the result. We name it an overlay instead of subtitles or anything simlar, as it adds more than just subtitles.
+  </p>
 
-        <h6>If I type a lot of letters into the 'Enter text to translate' field it goes red and I can't translate</h6>
-        <p>
-          Due to cost constraints, our server is not powerful enough to handle long requests. The server and web app will refuse to translate any text longer than 100 characters.
-        </p>
+  <h6>If I type a lot of letters into the 'Enter text to translate' field it goes red and I can't translate</h6>
+  <p>
+    Due to cost constraints, our server is not powerful enough to handle long requests. The server and web app will refuse to translate any text longer than 100 characters.
+  </p>
 
-        <br />
+  <br />
 
-        <h4>How we have made TxtToSL Online</h4>
-        <hr />
-        <p>
-          TxtToSL Online translates text into sign languages (you can select the one you want from the sign language selector). It works by utilising three systems: The app, which is the website you're using right now. The server, which interprets
-          your requests and then passes them onto; The engine, which is a heavily modified version of <a href="https://github.com/oojmed/TxtToSL">our free and open source TxtToSL project</a>.
-        </p>
+  <h4>How we have made TxtToSL Online</h4>
+  <hr />
+  <p>
+    TxtToSL Online translates text into sign languages (you can select the one you want from the sign language selector). It works by utilising three systems: The app, which is the website you're using right now. The server, which interprets
+    your requests and then passes them onto; The engine, which is a heavily modified version of <a href="https://github.com/oojmed/TxtToSL">our free and open source TxtToSL project</a>.
+  </p>
 
-        <br />
+  <br />
 
-        <h4>1) The app</h4>
-        <hr />
-        <p>
-          The app is made in basic HTML, CSS and a tiny bit of JavaScript. It utilizes Material Design, by using <a href="https://material.io/develop/web/">Material Components Web</a>. It works as all your options are in a form, which when you click the translate / submit button, sends a request to the server (see below) which is running an API. It then handles the request, and redirects
-          you to a GIF of your translation.
-        </p>
+  <h4>1) The app</h4>
+  <hr />
+  <p>
+    The app is made in basic HTML, CSS and a tiny bit of JavaScript. It utilizes Material Design, by using <a href="https://material.io/develop/web/">Material Components Web</a>. It works as all your options are in a form, which when you click the translate / submit button, sends a request to the server (see below) which is running an API. It then handles the request, and redirects
+    you to a GIF of your translation.
+  </p>
 
-        <br />
+  <br />
 
-        <h4>2) The server</h4>
-        <hr />
-        <p>
-          The server is made in <a href="https://nodejs.org">NodeJS</a>. It's a web server that runs on <a href="https://expressjs.com">ExpressJS</a>. The translation API does this process:
-        </p>
+  <h4>2) The server</h4>
+  <hr />
+  <p>
+    The server is made in <a href="https://nodejs.org">NodeJS</a>. It's a web server that runs on <a href="https://expressjs.com">ExpressJS</a>. The translation API does this process:
+  </p>
 
-        <ul>
-          <li>Handle and sanitize the request</li>
-          <li>Runs the TxtToSL Python script (the engine) with arguments matching the request</li>
-          <li>Compress the output GIF</li>
-          <li>Upload it to the hoster</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="mdc-dialog__scrim"></div>
+  <ul>
+    <li>Handle and sanitize the request</li>
+    <li>Runs the TxtToSL Python script (the engine) with arguments matching the request</li>
+    <li>Compress the output GIF</li>
+    <li>Upload it to the hoster</li>
+  </ul>
 </div>
-  <!-- JS Files  -->
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="code.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/offline.js"></script>
+</div>
+</div>
+<div class="mdc-dialog__scrim"></div>
+</div>
+<!-- JS Files  -->
+<script src="./js/main.js"></script>
+<script src="./js/offline.js"></script>
 </body>
 </html>

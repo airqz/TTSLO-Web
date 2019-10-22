@@ -7,7 +7,7 @@ var cacheName = 'cache-v1';
 var files = [
   './',
   './index.html?utm=homescreen', //SW treats query string as new request
-  'https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700', //caching 3rd party content
+  'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700', //caching 3rd party content
   './styles.css',
   './js/main.js',
   './js/offline.js',

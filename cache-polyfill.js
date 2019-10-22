@@ -1,6 +1,5 @@
 /*
   Source: https://github.com/coonsta/cache-polyfill
-  Author: https://github.com/coonsta
 */
 
 if (!Cache.prototype.add) {
